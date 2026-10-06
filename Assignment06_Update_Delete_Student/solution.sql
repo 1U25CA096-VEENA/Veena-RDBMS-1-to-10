@@ -1,25 +1,21 @@
-DROP DATABASE IF EXISTS CollegeDB;
-CREATE DATABASE CollegeDB;
 USE CollegeDB;
 
-CREATE TABLE Student(
-    StudentID INT(5) PRIMARY KEY,
-    StudentName VARCHAR(20),
-    DOB DATE,
-    Gender VARCHAR(10),
-    DepartmentID INT(5),
-    Email VARCHAR(30),
-    PhoneNumber BIGINT
+CREATE TABLE Marksheet (
+    rollNo INT,
+    Name VARCHAR(20),
+    Department VARCHAR(10),
+    marks INT
 );
 
-INSERT INTO Student(StudentID,StudentName,Gender,DepartmentID)
+INSERT INTO Marksheet
 VALUES
-(1001,'Arun','Male',101),
-(1002,'Divya','Female',102),
-(1003,'Karthik','Male',101);
+    (1, 'Arun', 'CSC', 85),
+    (2, 'Divya', 'IT', 78),
+    (3, 'Karthik', 'CSC', 92),
+    (4, 'Nisha', 'CSC', 67),
+    (5, 'Rahul', 'IT', 88);
 
--- Update Karthik's DepartmentID
-
--- Delete StudentID 1002
-
--- Display all records
+SELECT *
+FROM Marksheet
+WHERE marks > 80
+ORDER BY marks DESC;
